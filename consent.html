@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroupMe Calendar Monitor - Consent Documentation</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.6; }
+        h1 { font-size: 1.5em; }
+        h2 { font-size: 1.2em; margin-top: 2em; }
+        p { margin: 0.8em 0; }
+        .updated { color: #666; font-size: 0.9em; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Proof of Consent (Opt-In) Documentation</h1>
+    <p class="updated">Last updated: March 7, 2026</p>
+
+    <h2>Consent Method</h2>
+    <p>This is a private, family-use application with only two recipients. Both recipients are the sole owners and operators of the application. Consent is provided directly by each recipient through the act of manually configuring their own phone number in the application's environment configuration file.</p>
+
+    <h2>How Consent Is Given</h2>
+    <p>Each recipient explicitly adds their own phone number to the application's <code>.env</code> configuration file. This is a deliberate, manual action that requires direct access to the application's server. No phone numbers can be added without physical or SSH access to the device running the application.</p>
+    <p>The configuration file contains clearly labeled fields:</p>
+    <pre>RYAN_PHONE=+1XXXXXXXXXX    # Parent 1 cell number
+NIKKI_PHONE=+1XXXXXXXXXX   # Parent 2 cell number</pre>
+    <p>By entering a phone number into these fields, the recipient explicitly consents to receive automated SMS notifications about calendar updates.</p>
+
+    <h2>How to Revoke Consent (Opt-Out)</h2>
+    <ul>
+        <li>Text <strong>STOP</strong> to the sending number at any time to immediately stop all messages.</li>
+        <li>Remove the phone number from the <code>.env</code> configuration file.</li>
+        <li>Text <strong>HELP</strong> for assistance.</li>
+    </ul>
+
+    <h2>Scope of Messaging</h2>
+    <ul>
+        <li><strong>Recipients:</strong> Only 2 family members (the application owners)</li>
+        <li><strong>Message type:</strong> Automated calendar update notifications only</li>
+        <li><strong>Frequency:</strong> 0-5 messages per day, batched every 30 minutes</li>
+        <li><strong>No marketing or promotional messages are ever sent</strong></li>
+        <li><strong>No third-party phone numbers are ever added</strong></li>
+    </ul>
+
+    <h2>Related Documents</h2>
+    <ul>
+        <li><a href="index.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms and Conditions</a></li>
+    </ul>
+</body>
+</html>
